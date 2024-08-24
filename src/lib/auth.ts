@@ -78,12 +78,14 @@ export const login = async (credentials: TLogin) => {
       return { error: "incorrect credentials" };
     }
 
-    const validatePassword = verify(user.password, data.password, {
+    const validatePassword = await verify(user.password, data.password, {
       memoryCost: 19456,
       timeCost: 2,
       outputLen: 32,
       parallelism: 1,
     });
+
+    console.log({ validatePassword });
 
     if (!validatePassword) {
       return { error: "incorrect credentials" };
