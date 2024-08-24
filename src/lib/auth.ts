@@ -40,6 +40,7 @@ export const signUp = async (credentials: TSignUp) => {
         name: data.name,
         email: data.email,
         password: hashedPassword,
+        role: data.role,
       },
     });
 

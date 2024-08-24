@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import SignUpFrom from "./SignUpForm";
 import Image from "next/image";
 import signUpImage from "../../../../public/auth.jpg";
-export const metadata: Metadata = { title: "login" };
+export const metadata: Metadata = { title: "signup" };
 
 const SignUpPage = () => {
   return (

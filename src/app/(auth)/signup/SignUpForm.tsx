@@ -76,6 +76,19 @@ const SignUpFrom = () => {
             </FormItem>
           )}
         />
+        <FormField
+          control={form.control}
+          name="role"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Role</FormLabel>
+              <FormControl>
+                <Input {...field} autoComplete="off" />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
         {error && <p className="text-red-500">{error}</p>}
         <Button disabled={isPending} className="w-full" type="submit">
           {isPending && <Loader2 className="animate-spin mr-2" />} Sign UP
