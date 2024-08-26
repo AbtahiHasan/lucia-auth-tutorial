@@ -3,7 +3,8 @@ import { Lucia, Session, User } from "lucia";
 import prisma from "./lib/prisma";
 import { cache } from "react";
 import { cookies } from "next/headers";
-import { UserRoles } from "@prisma/client";
+import { UserRole } from "@prisma/client";
+
 const adapter = new PrismaAdapter(prisma.session, prisma.user);
 export const lucia = new Lucia(adapter, {
   sessionCookie: {
@@ -33,7 +34,7 @@ interface DatabaseUserAttributes {
   id: string;
   name: string;
   email: string;
-  role: UserRoles;
+  role: UserRole;
 }
 
 export const validateRequest = cache(

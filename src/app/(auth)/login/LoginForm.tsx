@@ -10,8 +10,8 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { login, signUp } from "@/lib/auth";
-import { loginSchema, signUpSchema, TLogin, TSignUp } from "@/lib/validation";
+import { login } from "@/lib/auth";
+import { loginSchema, TLogin } from "@/lib/validation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
@@ -62,6 +62,7 @@ const LoginForm = () => {
             </FormItem>
           )}
         />
+
         {error && <p className="text-red-500">{error}</p>}
         <Button disabled={isPending} className="w-full" type="submit">
           {isPending && <Loader2 className="animate-spin mr-2" />} Login

@@ -89,6 +89,7 @@ const SignUpFrom = () => {
             </FormItem>
           )}
         />
+
         {error && <p className="text-red-500">{error}</p>}
         <Button disabled={isPending} className="w-full" type="submit">
           {isPending && <Loader2 className="animate-spin mr-2" />} Sign UP

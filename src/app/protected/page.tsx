@@ -3,11 +3,9 @@ import ProtectedRoutes from "@/components/ProtectedRoutes";
 
 const Page = () => {
   return (
-    <ProtectedRoutes roles={["user"]}>
-      <div>
-        User ONly
-        <LogoutButton />
-      </div>
+    <ProtectedRoutes roles={["user", "admin"]}>
+      <h1>Protected</h1>
+      <LogoutButton />
     </ProtectedRoutes>
   );
 };

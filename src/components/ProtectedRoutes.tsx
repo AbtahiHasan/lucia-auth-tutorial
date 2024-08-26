@@ -1,6 +1,7 @@
 import { validateRequest } from "@/auth";
-import { UserRoles } from "@prisma/client";
+import { UserRole } from "@prisma/client";
 import { redirect } from "next/navigation";
+
 import { ReactNode } from "react";
 
 const ProtectedRoutes = async ({
@@ -8,16 +9,17 @@ const ProtectedRoutes = async ({
   roles,
 }: {
   children: ReactNode;
-  roles: UserRoles[];
+  roles?: UserRole[];
 }) => {
   const session = await validateRequest();
   if (!session?.user) {
-    return redirect("/login");
+    return redirect("/");
   }
 
-  if (roles.includes(session?.user?.role)) {
+  if (roles?.includes(session?.user?.role || "")) {
     return <>{children}</>;
   }
+
   return redirect("/");
 };
 

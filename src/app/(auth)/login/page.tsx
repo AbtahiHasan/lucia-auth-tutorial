@@ -11,7 +11,7 @@ const LoginPage = () => {
       <div className="p-5 shadow-sm rounded-lg border bg-white">
         <div className=" gap-5 my-3 lg:grid grid-cols-2">
           {" "}
-          <div className=" w-full px-5  flex flex-col justify-center">
+          <div className=" w-full px-5 flex flex-col justify-center">
             <h2 className="text-2xl lg:text-3xl bold text-center">Login</h2>
             <LoginForm />
           </div>
